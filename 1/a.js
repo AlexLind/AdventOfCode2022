@@ -7,22 +7,22 @@ fs.readFile("./input.txt", "utf8", (err, data) => {
     console.error(err);
     return;
   }
-  //   console.log(data.split(/\r?\n/).join(' ').split('  ').map((item) => item.split(' ')));
   elfCaloriesArr = data
     .split(/\r?\n/)
     .join(" ")
     .split("  ")
     .map((item) => item.split(" "));
-  //   console.log(elfCaloriesArr);
-  //   const elfCalorieCount = elfCaloriesArr.map((item) => {console.log(item)});
+
   const elfCalorieCount = elfCaloriesArr.map((item) =>
     item.map((str) => {
       return Number(str);
     })
   );
+
   const topThreeElfs = []
   const elfCalorieCountSum = elfCalorieCount.map((item) => item.reduce((acc, curr) => acc + curr));
   const max1 = Math.max(...elfCalorieCountSum)
+  console.log(max1)
   topThreeElfs.push(max1);
   index1 = elfCalorieCountSum.indexOf(max1);
   elfCalorieCountSum.splice(index1,1)
