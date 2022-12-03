@@ -21,8 +21,6 @@ fs.readFile("./input.txt", "utf8", (err, data) => {
 
   let matchingItems = [];
 
-  console.log(compartment1);
-
   for (let i = 0; i < compartment1.length; i++) {
     const sharedItem = compartment1[i].filter((item) =>
       compartment2[i].includes(item)
@@ -37,7 +35,6 @@ fs.readFile("./input.txt", "utf8", (err, data) => {
   const matchingItemsUnique = matchingItems.map((matchingItem) => [
     ...new Set(matchingItem),
   ]);
-//   console.log(matchingItemsUnique);
 
   // Assign priority value to each matching item
 
@@ -103,6 +100,6 @@ fs.readFile("./input.txt", "utf8", (err, data) => {
   // Sum up the priority values in the array
 
     const sum = priorityValueArr.reduce((sum, item) => sum + item);
-    // console.log(sum);
+    console.log(sum);
 
 });
